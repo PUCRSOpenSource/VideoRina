@@ -22,6 +22,7 @@
 using namespace std;
 
 #include "AVIClass.h"
+#include "Ponto.h"
 
 #define MED_SIZE 9
 
@@ -418,20 +419,17 @@ void Mediana(AVIClass V, ImageClass in, ImageClass out)
 
 void preencheArea(AVIClass V, ImageClass image, int x, int y, double r, double g, double b)
 {
-    //cout << "entrei no preencheArea" << endl;
     V.DrawPixel(x, y, r, g, b);
     image.DrawPixel(x, y, 0, 0, 0);
     for(int i = 0; i < MED_SIZE; i++)
     {
         int xi = x + offsets[i][0];
         int yi = y + offsets[i][1];
-        //cout << "x: " << xi << " -> " << x << " +/- " << offsets[i][0] << " --- " << "y: " << yi << " -> " << y << " +/- " << offsets[i][1] << endl;
         if (image.GetPointIntensity(xi, yi) == 255)
         {
             preencheArea(V, image, xi, yi, r, g, b);
         }
     }
-    //cout << "vou sair do preencheArea" << endl;
 }
 
 void encontraAreas(AVIClass V, ImageClass in, ImageClass out)
@@ -453,7 +451,6 @@ void encontraAreas(AVIClass V, ImageClass in, ImageClass out)
             if (out.GetPointIntensity(x, y) == 255)
             {
                 int bla = x * y % 256;
-                //cout << "x: " << x << " --- " << "y: " << y << endl;
                 preencheArea(V, out, x, y, colors[bla][0], colors[bla][1], colors[bla][2]);
             }
         }

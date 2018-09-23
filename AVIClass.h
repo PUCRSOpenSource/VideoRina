@@ -1,14 +1,14 @@
 // **********************************************************************
 // AVIClass.h
-//     classe para carga de vídeos no formato AVI de imagens
+//     classe para carga de vï¿½deos no formato AVI de imagens
 //
 // **********************************************************************
 
-// ATENÇÃO
-// Caso ocorra algum erro de compilação em função de que
-// o seu compilador não possui as bibliotecas de OpenGL,
-// abra o diretório "GL_Headers_and_libs" que acompanha
-// este arquivo e copie o subdiretório "GL" para dentro do diretório
+// ATENï¿½ï¿½O
+// Caso ocorra algum erro de compilaï¿½ï¿½o em funï¿½ï¿½o de que
+// o seu compilador nï¿½o possui as bibliotecas de OpenGL,
+// abra o diretï¿½rio "GL_Headers_and_libs" que acompanha
+// este arquivo e copie o subdiretï¿½rio "GL" para dentro do diretï¿½rio
 // "include" de seu compilador
 
 // include files for OpenGL
