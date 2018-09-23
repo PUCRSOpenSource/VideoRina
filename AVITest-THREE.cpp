@@ -19,6 +19,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <vector>
 using namespace std;
 
 #include "AVIClass.h"
@@ -286,11 +287,13 @@ double colors[256][3] = {
 };
 
 int cinza = true;
+bool primeiraVez = true;
+
+vector <Ponto*> listaPontos;
 
 AVIClass Video;
 ImageClass NewImage;
 ImageClass NewImage2;
-
 
 int offsets[MED_SIZE][2] = {{-1, -1}, {0, -1}, {1, -1}
                            ,{-1,  0}, {0,  0}, {1,  0}
@@ -450,11 +453,36 @@ void encontraAreas(AVIClass V, ImageClass in, ImageClass out)
         {
             if (out.GetPointIntensity(x, y) == 255)
             {
-                int bla = x * y % 256;
-                preencheArea(V, out, x, y, colors[bla][0], colors[bla][1], colors[bla][2]);
+                Ponto* p;
+                if (primeiraVez)
+                {
+                    int rgb = x * y % 256;
+                    p = new Ponto(x, y, colors[rgb][0], colors[rgb][1], colors[rgb][2]);
+                    listaPontos.push_back(p);
+                }
+                else
+                {
+                    Ponto corrente;
+                    corrente.setX(x);
+                    corrente.setY(y);
+                    Ponto* menor = listaPontos[0];
+                    for(int i = 0; i < listaPontos.size(); i++)
+                    {
+                        Ponto* bepis = listaPontos[i];
+                        if (menor->distancia(corrente) > bepis->distancia(corrente))
+                        {
+                            menor = bepis;
+                        }
+                    }
+                    p = menor;
+                    p->setX(x);
+                    p->setY(y);
+                }
+                preencheArea(V, out, x, y, p->getR(), p->getG(), p->getB());
             }
         }
     }
+    primeiraVez = false;
 }
 
 void CalculaNivelDeZoom(float &ZoomH, float &ZoomV)
