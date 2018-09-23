@@ -938,7 +938,7 @@
 	<iostream>
 	"AVIClass.h"
 
-1535566407 c:\users\marina\downloads\videoplayer3_m\videoplayer3\aviclass.h
+1537720317 c:\users\marina\downloads\videoplayer3_m\videoplayer3\aviclass.h
 	<GL\gl.h>
 	<GL\glut.h>
 	"IM/include/im.h"
@@ -990,10 +990,11 @@
 
 1535566410 c:\users\marina\downloads\videoplayer3_m\videoplayer3\soil\soil.h
 
-1537640359 source:c:\users\marina\downloads\videoplayer3_m\videoplayer3\avitest-three.cpp
+1537723280 source:c:\users\marina\downloads\videoplayer3_m\videoplayer3\avitest-three.cpp
 	<cstdlib>
 	<iostream>
 	"AVIClass.h"
+	"Ponto.h"
 
 1535566407 source:c:\users\marina\downloads\videoplayer3_m\videoplayer3\cameraclass.cpp
 	<iostream>
@@ -1065,4 +1066,6 @@
 1535566410 c:\users\marina\downloads\videoplayer3_m\videoplayer3\soil\stbi_dds_aug.h
 
 1535566410 c:\users\marina\downloads\videoplayer3_m\videoplayer3\soil\stbi_dds_aug_c.h
+
+1537723121 c:\users\marina\downloads\videoplayer3_m\videoplayer3\ponto.h
 
